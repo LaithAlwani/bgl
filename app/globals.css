@@ -125,19 +125,18 @@ nav .sidebar .nav-links > * {
   text-align: left;
   font-size: 14px;
   border-radius: 0;
-}
-
-nav .profile{
-  display: flex !important;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  white-space:nowrap;
 }
 
 nav .avatar{
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
+}
+
+nav .active { 
+  color: orangered;
+  font-weight: bold;
 }
 
 main {

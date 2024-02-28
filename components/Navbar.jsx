@@ -1,13 +1,15 @@
 "use client";
-import { SignInButton, SignOutButton } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isSignedIn, user } = useUser();
-  
+  const pathname = usePathname();
+
   return (
     <nav>
       <div
@@ -17,20 +19,35 @@ export default function Navbar() {
       </div>
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="nav-links">
-          <Link href="/leagues">Leagues</Link>
+          <Link
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            href="/"
+            className={pathname === "/" ? "active" : ""}>
+            Home
+          </Link>
+          <Link
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            href="/leagues"
+            className={pathname === "/leagues" ? "active" : ""}>
+            Leagues
+          </Link>
           {!isSignedIn ? (
             <SignInButton className="btn" />
           ) : (
             <>
-              <Link href="/profile" className="profile">
-              {user.username} <img src={user.imageUrl} className="avatar" /> 
+              <Link
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                href="/my-leagues"
+                className={pathname === "/my-leagues" ? "active" : ""}>
+                My Leagues
               </Link>
-              <SignOutButton className=" btn btn-primary" />
+
+              <UserButton />
             </>
           )}
         </div>
       </div>
-      <Link href="/">BGL</Link>
+      <Link href="/" onClick={()=>setIsMenuOpen(false)}>BGL</Link>
       {/* <h3>BGL</h3> */}
     </nav>
   );
