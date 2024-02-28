@@ -30,6 +30,7 @@ export default function Navbar() {
             </>
           )}
           <ActiveLink name="About" path="/about" setIsMenuOpen={setIsMenuOpen} />
+          <ActiveLink name="F.A.Q." path="/faq" setIsMenuOpen={setIsMenuOpen} />
           <ActiveLink name="Contact" path="/contact" setIsMenuOpen={setIsMenuOpen} />
 
           <UserButton afterSignOutUrl="/" />

@@ -148,13 +148,19 @@ nav .active {
 }
 
 main {
-  min-height: 88vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 92vh;
   width: 100%;
+  max-width: 60rem;
   margin-inline: auto;
+  padding-top: 4rem;
+}
+li{
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
+li:nth-child(odd){
+  font-weight: bold;
 }
 
 footer {
@@ -163,6 +169,20 @@ footer {
   justify-content: space-between;
   padding-block: 1rem;
   border-top: 1px solid;
+}
+
+.flex-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-wrapper{
+  position: relative;
+  width: 100%;
+  min-height: 20rem;
+  margin-block:1rem;
 }
 
 .social-links {
@@ -187,6 +207,7 @@ footer {
   border-radius: 0.25rem;
   min-width: 8rem;
   text-align: center;
+  background-color: transparent;
 }
 
 .btn-primary {

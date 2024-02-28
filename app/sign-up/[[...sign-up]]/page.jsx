@@ -1,10 +1,12 @@
-import { SignUp } from '@clerk/nextjs'
-import React from 'react'
+import { SignUp } from "@clerk/nextjs";
+import React from "react";
 
 function SignUpPage() {
   return (
-    <SignUp />
-  )
+    <div className="flex-page">
+      <SignUp />
+    </div>
+  );
 }
 
-export default SignUpPage
+export default SignUpPage;
