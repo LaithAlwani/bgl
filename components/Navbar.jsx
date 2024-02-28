@@ -1,5 +1,5 @@
 "use client";
-import { SignInButton, SignOutButton, UserButton } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
@@ -7,9 +7,8 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isSignedIn, user } = useUser();
-  const pathname = usePathname();
-
+  const { isSignedIn } = useUser();
+  
   return (
     <nav>
       <div
@@ -19,36 +18,36 @@ export default function Navbar() {
       </div>
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="nav-links">
-          <Link
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            href="/"
-            className={pathname === "/" ? "active" : ""}>
-            Home
-          </Link>
-          <Link
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            href="/leagues"
-            className={pathname === "/leagues" ? "active" : ""}>
-            Leagues
-          </Link>
-          {!isSignedIn ? (
-            <SignInButton className="btn" />
-          ) : (
+          <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} />
+          {isSignedIn && (
+            <ActiveLink name="Dashboard" path="/dashboard" setIsMenuOpen={setIsMenuOpen} />
+          )}
+          <ActiveLink name="Leagues" path="/leagues" setIsMenuOpen={setIsMenuOpen} />
+          {!isSignedIn && (
             <>
-              <Link
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                href="/my-leagues"
-                className={pathname === "/my-leagues" ? "active" : ""}>
-                My Leagues
-              </Link>
-
-              <UserButton />
+              <ActiveLink name="Sign In" path="/sign-in" setIsMenuOpen={setIsMenuOpen} />
+              <ActiveLink name="Sign Up" path="/sign-up" setIsMenuOpen={setIsMenuOpen} />
             </>
           )}
+          <ActiveLink name="About" path="/about" setIsMenuOpen={setIsMenuOpen} />
+          <ActiveLink name="Contact" path="/contact" setIsMenuOpen={setIsMenuOpen} />
+
+          <UserButton afterSignOutUrl="/" />
         </div>
       </div>
-      <Link href="/" onClick={()=>setIsMenuOpen(false)}>BGL</Link>
-      {/* <h3>BGL</h3> */}
+      <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
+        BGL
+      </Link>
     </nav>
   );
 }
+
+const ActiveLink = ({ name, path, setIsMenuOpen }) => {
+  const pathname = usePathname();
+  const active = pathname === path ? "active" : "";
+  return (
+    <Link href={path} className={active} onClick={() => setIsMenuOpen(false)}>
+      {name}
+    </Link>
+  );
+};

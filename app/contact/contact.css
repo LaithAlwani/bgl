@@ -1,0 +1,43 @@
+form {
+  width: 100%;
+  max-width: 600px;
+  padding-inline: 1rem;
+}
+
+form .input-wrapper {
+  position: relative;
+  margin-block: 1rem;
+}
+
+form .input-wrapper span {
+  position: absolute;
+  top: -0.2rem;
+  left: 0.5rem;
+  background: white;
+  padding-inline: 0.25rem;
+}
+
+form .input-error {
+  border: 1px solid red;
+}
+
+form .red {
+  color: red;
+}
+
+input,
+textarea {
+  width: 100%;
+  line-height: 1.2;
+  padding: 1rem 0.5rem;
+  margin-block: 0.5rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  resize: none;
+  outline: none;
+}
+
+input:focus,
+textarea:focus{
+  border: 2px solid;
+}
