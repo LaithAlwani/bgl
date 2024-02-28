@@ -7,8 +7,8 @@ export default function Home() {
       <h1>Board Game League</h1>
       <p>Take your game to the next level</p>
       <div className="button-group">
-        <Link href="/signup" className="btn btn-primary">GetStarted</Link>
-        <Link href="/leagues" className="btn">Register</Link>
+        <Link href="/leagues" className="btn btn-primary">Register</Link>
+        <Link href="/contact" className="btn">Contact Us</Link>
       </div>
 
       {/* game poll */}
