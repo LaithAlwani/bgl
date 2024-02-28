@@ -9,6 +9,14 @@ export default function FAQPage() {
         <li>A: 8 - 12 Weeks</li>
       </ul>
       <ul>
+        <li>Q: Where Can I find my Schdule & stats?</li>
+        <li>A: In your Dashboard</li>
+      </ul>
+      <ul>
+        <li>Q: where can I find league stats?</li>
+        <li>A: In the leagues section</li>
+      </ul>
+      <ul>
         <li>Q: Where Will the league games be?</li>
         <li>A: TBA.</li>
       </ul>
