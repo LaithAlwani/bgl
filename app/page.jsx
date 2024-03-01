@@ -4,7 +4,8 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex-page">
-      <h1>Board Game League</h1>
+      <h1>Welcome to Meelpe Nation</h1>
+      <h2>A Boardgameing League</h2>
       <p>Elevate your game to the next level</p>
       <div className="button-group">
         <Link href="/leagues" className="btn btn-primary">

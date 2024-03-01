@@ -1,4 +1,8 @@
-import React from "react";
+
+export const metadata = {
+  title: "Meeple Nation | FAQ",
+  description: "Frequently Asked Question about Meeple Nation",
+};
 
 export default function FAQPage() {
   return (

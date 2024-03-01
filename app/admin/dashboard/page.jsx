@@ -1,6 +1,11 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 
+export const metadata = {
+  title: "Meeple Nation | Admin",
+  description: "For Admins only",
+};
+
 export default function AdminDashboardPage() {
   const { sessionClaims } = auth();
 

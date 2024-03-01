@@ -1,5 +1,12 @@
+
 import Image from "next/image";
 import "./about.css";
+
+export const metadata = {
+  title: 'Meeple Nation | About',
+  description: 'about meeple nation vision and mission',
+}
+
 export default function AboutPage() {
   return (
     <div className="about-page">

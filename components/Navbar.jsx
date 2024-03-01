@@ -40,7 +40,7 @@ export default function Navbar() {
         </div>
       </div>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        BGL
+        Meeple Nation
       </Link>
     </nav>
   );
