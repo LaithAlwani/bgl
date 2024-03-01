@@ -221,7 +221,7 @@ footer {
 .btn-primary {
   background-color: orangered;
   border: none;
-  color: white;
+  color: white !important;
 }
 
 footer .copy-right {
