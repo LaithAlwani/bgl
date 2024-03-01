@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import "./home-page.css"
 
 export default function Home() {
   return (
-    <div className="flex-page">
+    <div className="flex-page home-page">
       <h1>Welcome to Meelpe Nation</h1>
       <h2>A Boardgameing League</h2>
       <p>Elevate your game to the next level</p>
