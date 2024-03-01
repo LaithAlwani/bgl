@@ -7,8 +7,8 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { isSignedIn } = useUser();
-  
+  const { isSignedIn, user } = useUser();
+
   return (
     <nav>
       <div
@@ -21,6 +21,9 @@ export default function Navbar() {
           <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} />
           {isSignedIn && (
             <ActiveLink name="Dashboard" path="/dashboard" setIsMenuOpen={setIsMenuOpen} />
+          )}
+          {user?.publicMetadata.role === "admin" && (
+            <ActiveLink name="Admin" path="/admin/dashboard" setIsMenuOpen={setIsMenuOpen} />
           )}
           <ActiveLink name="Leagues" path="/leagues" setIsMenuOpen={setIsMenuOpen} />
           {!isSignedIn && (
