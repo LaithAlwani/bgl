@@ -10,7 +10,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <div className="about-page">
-      <h1>About BGL</h1>
+      <h1>About Meeple Nation</h1>
       <div>
         <p>
           Founded in Ottawa, Ontario in 2024 by a passionate board game aficionado, Board Game
