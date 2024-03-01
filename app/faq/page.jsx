@@ -6,7 +6,7 @@ export default function FAQPage() {
       <h2>F.A.Q&apos;s</h2>
       <ul>
         <li>Q: Where Will the league games be?</li>
-        <li>A: Papa Joe's, 1896 Prince of Wales Dr, Nepean, ON K2C 3W9.</li>
+        <li>A: Papa Joe&apos;s, 1896 Prince of Wales Dr, Nepean, ON K2C 3W9.</li>
       </ul>
       <ul>
         <li>Q: How long is each League?</li>
