@@ -49,7 +49,7 @@ export default function ContactPage() {
   };
 
   return (
-    <>
+    <div className="flex-page">
       <h3>Contact US</h3>
       <form onSubmit={handleSubmit}>
         <Input
@@ -86,6 +86,6 @@ export default function ContactPage() {
         />
         <button disabled={loading} className={`btn ${loading ? "btn-disabled":""}`}>{loading? "Sending...":"Submit"}</button>
       </form>
-    </>
+    </div>
   );
 }

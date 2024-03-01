@@ -15,7 +15,14 @@ export default function Home() {
         </Link>
       </div>
       <div className="img-wrapper">
-        <Image src="/images/bg.jpg" alt="a game of thrones board game" fill />
+        <Image
+          src="/images/bg.jpg"
+          alt="a game of thrones board game"
+          fill
+          sizes="100vw"
+          priority
+          objectFit="cover"
+        />
       </div>
 
       {/* game poll */}

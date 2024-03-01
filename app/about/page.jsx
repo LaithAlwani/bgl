@@ -13,7 +13,7 @@ export default function AboutPage() {
           introduce and encourage the hobby to a broader audience of players.
         </p>
         <div className="img-wrapper">
-          <Image src="/images/players.webp" alt="image of players playing" fill />
+          <Image src="/images/players.webp" alt="image of players playing" fill objectFit="cover" />
         </div>
       </div>
       <h2>Meet the Orginizer</h2>
@@ -23,7 +23,7 @@ export default function AboutPage() {
           dicta nemo sunt velit quidem rerum commodi labore.
         </p>
         <div className="img-wrapper">
-          <Image src="/images/players.webp" alt="image of orgnizer" fill />
+          <Image src="/images/players.webp" alt="image of orgnizer" fill objectFit="cover" />
         </div>
       </div>
       <h2></h2>

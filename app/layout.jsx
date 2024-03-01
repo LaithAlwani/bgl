@@ -1,7 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import BackTopBtn from "@/components/BackTopBtn";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { FaSquareYoutube, FaXTwitter } from "react-icons/fa6";
 import { Toaster } from "react-hot-toast";
@@ -23,7 +22,7 @@ export default function RootLayout({ children }) {
           <Toaster />
           <main>{children}</main>
           <Footer />
-          <BackTopBtn />
+
         </body>
       </html>
     </ClerkProvider>

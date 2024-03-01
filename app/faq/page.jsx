@@ -5,20 +5,24 @@ export default function FAQPage() {
     <>
       <h2>F.A.Q&apos;s</h2>
       <ul>
+        <li>Q: Where Will the league games be?</li>
+        <li>A: Papa Joe's, 1896 Prince of Wales Dr, Nepean, ON K2C 3W9.</li>
+      </ul>
+      <ul>
         <li>Q: How long is each League?</li>
-        <li>A: 8 - 12 Weeks</li>
+        <li>A: 4 Weeks</li>
+      </ul>
+      <ul>
+        <li>Q: How many player per League?</li>
+        <li>A: A minimum of 8 players and a maximum of 16</li>
       </ul>
       <ul>
         <li>Q: Where Can I find my Schdule & stats?</li>
-        <li>A: In your Dashboard</li>
+        <li>A: In your personal Dashboard</li>
       </ul>
       <ul>
         <li>Q: where can I find league stats?</li>
         <li>A: In the leagues section</li>
-      </ul>
-      <ul>
-        <li>Q: Where Will the league games be?</li>
-        <li>A: TBA.</li>
       </ul>
       <ul>
         <li>Q: What Are the Games?</li>
@@ -27,16 +31,16 @@ export default function FAQPage() {
       <ul>
         <li>Q: Can players suggest games?</li>
         <li>
-          A: Yes, fill out a contact form.
+          A: Yes, You may fill out a contact form.
         </li>
       </ul>
       <ul>
         <li>Q: How much are league registration?</li>
-        <li>A: Each League will $150 per player.</li>
+        <li>A: Each League will $80 per player.</li>
       </ul>
       <ul>
         <li>Q: What does the registration fees include?</li>
-        <li>A: Venu rental, boardgames used during the league and prizes for winners.</li>
+        <li>A: Venu rental, boardgames used during the league and possible prizes for winners.</li>
       </ul>
       <ul>
         <li>Q: How many different games will be choosen?</li>
