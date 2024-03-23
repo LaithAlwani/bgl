@@ -1,9 +1,13 @@
 'use client'
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 export default function CreatePollForms() {
   const [inputs, setInputs] = useState({});
   const [itemNumbers, setItemNumbers] = useState(1);
+  const router = useRouter()
+
   const handleClick = () => {
     setItemNumbers((prevState) => prevState + 1);
   };
@@ -17,6 +21,9 @@ export default function CreatePollForms() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs);
+    toast.success(`poll ${inputs.title} created`);
+    setInputs({});
+    router.push('/admin/dashboard')
   };
   return (
     <form onSubmit={handleSubmit}>

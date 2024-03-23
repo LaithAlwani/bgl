@@ -11,7 +11,7 @@ export default function CreatePolls() {
 
   return (
     <>
-      <h2>Create a Poll</h2>
+      <h2>Create Poll</h2>
       <CreatePollForms />
     </>
   );
