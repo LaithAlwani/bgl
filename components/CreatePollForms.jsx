@@ -25,7 +25,7 @@ export default function CreatePollForms() {
     toast.success(`poll ${title} created`);
     setTitle('');
     setInputs({});
-    router.push("/admin/dashboard");
+    router.push("/polls");
   };
   return (
     <form onSubmit={handleSubmit}>
