@@ -5,7 +5,7 @@ export default function page() {
   return (
     <>
       <h1>Polls</h1>
-      <p>Fetch polls current poll and archived ones</p>
+      <p>this page will show current and past polls</p>
     </>
   );
 }
