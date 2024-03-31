@@ -30,7 +30,7 @@ export default function CreatePollForms() {
     }
     console.log(newInputs);
     try {
-      const res = await fetch("http://localhost:3000/api/polls", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/polls`, {
         method: "POST",
         headers: {
           "Content-type":"application/json"
