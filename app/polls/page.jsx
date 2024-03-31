@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function page() {
+export default function PollsPage() {
   const [polls, setPolls] = useState([]);
 
   const getPolls = async () => {
