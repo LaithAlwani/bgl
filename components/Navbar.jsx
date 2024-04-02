@@ -12,6 +12,9 @@ export default function Navbar() {
 
   return (
     <nav>
+      <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
+        <Image src="/logo.png" alt="logo" width={120} height={70} />
+      </Link>
       <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -20,7 +23,7 @@ export default function Navbar() {
       </div>
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="nav-links">
-          <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} />
+          {/* <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} /> */}
           {isSignedIn && (
             <ActiveLink
               name="Dashboard"
@@ -75,9 +78,7 @@ export default function Navbar() {
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>
-      <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        <Image src="/logo.png" alt="logo" width={120} height={70} />
-      </Link>
+      
     </nav>
   );
 }
