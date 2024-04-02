@@ -34,18 +34,18 @@ const Footer = () => {
   return (
     <footer>
       <div className="social-links">
-        <a href="#" aria-label="Facebook page">
+        <a href="https://www.facebook.com/GameDistricts/" aria-label="Facebook page">
           <FaFacebookF size={size} />
         </a>
-        <a href="#">
+        <a href="https://www.instagram.com/game_districts/">
           <FaInstagram size={size} aria-label="Instagram page" />
         </a>
-        <a href="#">
+        {/* <a href="#">
           <FaSquareYoutube size={size} aria-label="Linkedin page" />
         </a>
         <a href="#">
           <FaXTwitter size={size} aria-label="X page" />
-        </a>
+        </a> */}
       </div>
 
       <span className="copy-right">&copy;2024 Ottawa, ON.</span>

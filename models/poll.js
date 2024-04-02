@@ -14,7 +14,7 @@ const pollSchema = new Schema(
         },
         votes: {
           type: Number,
-          require: true,
+          required: true,
         },
       },
     ],
@@ -24,9 +24,13 @@ const pollSchema = new Schema(
         ref: "User",
       },
     ],
+    on_going: {
+      type: Boolean,
+      default: true,
+    },
     total_votes: {
       type: Number,
-      reqired: true,
+      default: 0,
     },
   },
   { timestamps: true }

@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,7 +76,7 @@ export default function Navbar() {
         </div>
       </div>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        Meeple Nation
+        <Image src="/logo.png" alt="logo" width={120} height={70} />
       </Link>
     </nav>
   );

@@ -25,7 +25,7 @@ export default function CreatePollForms() {
     const newInputs = []
     for (const key in inputs) {
       if (inputs.hasOwnProperty(key)) {
-        newInputs.push({item:inputs[key], votes:0});
+        newInputs.push({name:inputs[key], votes:0});
       }
     }
     console.log(newInputs);
