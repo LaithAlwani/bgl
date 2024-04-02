@@ -1,16 +1,37 @@
-import {Schema, model, models} from "mongoose";
+import { Schema, model, models } from "mongoose";
 
-const pollSchema = new Schema({
-  title: {
-    type: String,
-    reqired: true
+const pollSchema = new Schema(
+  {
+    title: {
+      type: String,
+      reqired: true,
+    },
+    items: [
+      {
+        name: {
+          type: String,
+          reqired: true,
+        },
+        votes: {
+          type: Number,
+          require: true,
+        },
+      },
+    ],
+    users: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "User",
+      },
+    ],
+    total_votes: {
+      type: Number,
+      reqired: true,
+    },
   },
-  items: {
-    type: Array,
-    reqired: true
-  }
-}, { timestamps: true });
+  { timestamps: true }
+);
 
-const Poll = models.Poll || model("Poll", pollSchema)
+const Poll = models.Poll || model("Poll", pollSchema);
 
 export default Poll;
