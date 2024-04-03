@@ -1,12 +1,12 @@
 
 export const metadata = {
-  title: "Meeple Nation | FAQ",
+  title: "Game Districts | FAQ",
   description: "Frequently Asked Question about Meeple Nation",
 };
 
 export default function FAQPage() {
   return (
-    <>
+    <div className="page">
       <h2>F.A.Q&apos;s</h2>
       <ul>
         <li>Q: Where Will the league games be?</li>
@@ -50,6 +50,6 @@ export default function FAQPage() {
         <li>Q: How many different games will be choosen?</li>
         <li>A: Up to 10 different games.</li>
       </ul>
-    </>
+    </div>
   );
 }

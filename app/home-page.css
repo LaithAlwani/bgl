@@ -1,3 +1,15 @@
 .home-page{
-  padding-top: 10rem;
+  width: 100vw;
+  height: calc(100vh - 65px);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.home-page h1,
+.home-page h2{
+  margin: 0;
+}
+
+.home-page .hero-img{
+  z-index: -1;
 }

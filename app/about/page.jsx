@@ -3,7 +3,7 @@ import Image from "next/image";
 import "./about.css";
 
 export const metadata = {
-  title: 'Meeple Nation | About',
+  title: 'Game Districts | About',
   description: 'about meeple nation vision and mission',
 }
 

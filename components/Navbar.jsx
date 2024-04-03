@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        <Image src="/logo.png" alt="logo" width={120} height={50} />
+        <Image src="/logo-min.png" alt="logo" width={120} height={50} />
       </Link>
       <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
@@ -23,7 +23,7 @@ export default function Navbar() {
       </div>
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="nav-links">
-          {/* <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} /> */}
+          <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} />
           {isSignedIn && (
             <ActiveLink
               name="Dashboard"
@@ -72,7 +72,6 @@ export default function Navbar() {
               name="Admin"
               path="/admin/dashboard"
               setIsMenuOpen={setIsMenuOpen}
-              styles="btn btn-primary"
             />
           )}
           <UserButton afterSignOutUrl="/" />
@@ -83,13 +82,13 @@ export default function Navbar() {
   );
 }
 
-const ActiveLink = ({ name, path, setIsMenuOpen, styles }) => {
+const ActiveLink = ({ name, path, setIsMenuOpen }) => {
   const pathname = usePathname();
   const active = pathname === path ? "active" : "";
   return (
     <Link
       href={path}
-      className={`${active} ${styles}`}
+      className={`${active}`}
       onClick={() => setIsMenuOpen(false)}
     >
       {name}

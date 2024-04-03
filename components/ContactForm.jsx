@@ -2,6 +2,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Input from "./Input";
+import Loader from "./Loader";
 
 export const metadata = {
   title: "Meeple Nation | Contact",
@@ -42,7 +43,7 @@ export default function ContactForm() {
     const valid = validateFrom();
     if (valid) {
       setLoading(true);
-      //code for form action 
+      //code for form action
       //setTimeout is there to only behave like an api call
       setTimeout(() => {
         setLoading(false);
@@ -88,7 +89,11 @@ export default function ContactForm() {
           error={messageError}
           setError={setMessageError}
         />
-        <button disabled={loading} className={`btn ${loading ? "btn-disabled":""}`}>{loading? "Sending...":"Submit"}</button>
+        <button
+          disabled={loading}
+          className={`btn btn-form ${loading ? "btn-disabled" : ""}`}>
+          {loading ? <Loader size={24} /> : "Submit"}
+        </button>
       </form>
     </>
   );

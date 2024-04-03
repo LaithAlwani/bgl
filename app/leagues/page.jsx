@@ -1,7 +1,7 @@
 import React from 'react'
 
 export const metadata = {
-  title: "Meeple Nation | Leagues",
+  title: "Game Districts | Leagues",
   description: "League leaders, upcoming leagues and game sessions",
 };
 
