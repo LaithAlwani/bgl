@@ -13,7 +13,7 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        <Image src="/logo.png" alt="logo" width={120} height={70} />
+        <Image src="/logo.png" alt="logo" width={120} height={50} />
       </Link>
       <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
