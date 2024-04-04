@@ -1,5 +1,5 @@
-import { UserProfile } from '@clerk/nextjs'
-import React from 'react'
+import { UserProfile } from "@clerk/nextjs";
+import React from "react";
 
 export const metadata = {
   title: "Meeple Nation | Dashboard",
@@ -8,6 +8,8 @@ export const metadata = {
 
 export default function DashboardPage() {
   return (
-    <h1>Profile</h1>
-  )
+    <div className="page">
+      <h1>Profile</h1>
+    </div>
+  );
 }

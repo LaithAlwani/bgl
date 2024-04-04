@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="about-page">
+    <div className="about-page page">
       <h1>About Game Districts</h1>
       <div>
         <p>
