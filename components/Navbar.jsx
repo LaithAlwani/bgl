@@ -70,7 +70,7 @@ export default function Navbar() {
           {user?.publicMetadata.role === "admin" && (
             <ActiveLink
               name="Admin"
-              path="/admin/dashboard"
+              path="/admin"
               setIsMenuOpen={setIsMenuOpen}
             />
           )}

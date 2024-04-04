@@ -19,10 +19,16 @@ const userSchema = new Schema(
     image: String,
     avatar: String,
 
-    polls: [
+    leagues: [
       {
         type: Schema.Types.ObjectId,
-        ref: "Poll",
+        ref: "League",
+      },
+    ],
+    sessions: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Session",
       },
     ],
     // leagues: [
