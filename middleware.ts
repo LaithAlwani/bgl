@@ -12,7 +12,6 @@ export default authMiddleware({
     "/faq",
     "/polls",
     "/api/webhooks(.*)",
-    
   ],
   // Routes that can always be accessed, and have
   // no authentication information
