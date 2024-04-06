@@ -11,5 +11,7 @@
 }
 
 .home-page .hero-img{
+  height: 93% !important;
   z-index: -1;
+  object-fit: cover;
 }

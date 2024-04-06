@@ -168,10 +168,8 @@ nav .active {
 }
 
 main {
-  min-height: 100vh;
   width: 100%;
   margin-inline: auto;
-  padding-top: 4rem;
 }
 
 li {
@@ -193,9 +191,11 @@ footer {
 }
 
 .page {
+  min-height: 93vh;
+  padding: 4rem 1rem 1rem;
   max-width: 60rem;
   margin-inline: auto;
-  padding-inline: 1rem;
+  
 }
 
 .flex-page {
@@ -204,7 +204,6 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
-  padding-block: 1rem;
 }
 
 .img-wrapper {

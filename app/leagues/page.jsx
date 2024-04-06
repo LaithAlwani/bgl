@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export const metadata = {
   title: "Game Districts | Leagues",
@@ -7,6 +7,8 @@ export const metadata = {
 
 export default function page() {
   return (
-    <h1>Leagues</h1>
-  )
+    <div className="page">
+      <h1>Leagues</h1>
+    </div>
+  );
 }

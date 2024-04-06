@@ -23,7 +23,6 @@ export default function Home() {
         fill
         sizes="100vw"
         priority
-        objectFit="cover"
         className="hero-img"
       />
 
