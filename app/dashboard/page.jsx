@@ -2,7 +2,7 @@ import { UserProfile } from "@clerk/nextjs";
 import React from "react";
 
 export const metadata = {
-  title: "Meeple Nation | Dashboard",
+  title: "Game Distrcits | Dashboard",
   description: "Your personal Meeple Nation Dashbord",
 };
 
