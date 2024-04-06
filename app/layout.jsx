@@ -17,12 +17,25 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link
+            rel="icon"
+            href="/icon?<generated>"
+            type="image/<generated>"
+            sizes="<generated>"
+          />
+          <link
+            rel="apple-touch-icon"
+            href="/apple-icon?<generated>"
+            type="image/<generated>"
+            sizes="<generated>"
+          />
+        </head>
         <body className={inter.className}>
           <Navbar />
           <Toaster />
           <main>{children}</main>
           <Footer />
-
         </body>
       </html>
     </ClerkProvider>
