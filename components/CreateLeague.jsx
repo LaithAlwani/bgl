@@ -47,9 +47,6 @@ export default function CreateLeague() {
         value={maxNumPlayers}
         onChange={(e) => setMaxNumPlayers(e.target.value)}
       />
-      <button className="btn " type="button" onClick={() => handleClick(1)}>
-        Add item
-      </button>
       <button className="btn btn-primary">Submit</button>
     </form>
   )

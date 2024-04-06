@@ -77,9 +77,6 @@ export default function CreateBoardgameForm() {
         cols="30"
         rows="10"
         placeholder="Description"></textarea>
-      <button className="btn " type="button" onClick={() => handleClick(1)}>
-        Add item
-      </button>
       <button className="btn btn-primary">Submit</button>
     </form>
   );
