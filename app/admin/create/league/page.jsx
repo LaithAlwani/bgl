@@ -1,8 +1,8 @@
 import { auth } from "@clerk/nextjs";
-import CreateLeague from "@/components/CreateLeague";
+import CreateLeagueForm from "@/components/CreateLeague";
 import "../../../contact/contact.css";
 
-export default function CreateLeagues() {
+export default function CreateLeague() {
   const { sessionClaims } = auth();
 
   if (sessionClaims?.metadata.role !== "admin") {
@@ -12,7 +12,8 @@ export default function CreateLeagues() {
   return (
     <div className="page flex-page">
       <h2>Create League</h2>
-      <CreateLeague />
+      <p>pick a board game and create a league by with start and end date</p>
+      <CreateLeagueForm />
     </div>
   );
 }

@@ -10,7 +10,6 @@ export default authMiddleware({
     "/about",
     "/contact",
     "/faq",
-    "/polls",
     "/api/webhooks(.*)",
   ],
   // Routes that can always be accessed, and have

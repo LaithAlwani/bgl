@@ -36,11 +36,6 @@ export default function Navbar() {
             path="/leagues"
             setIsMenuOpen={setIsMenuOpen}
           />
-          <ActiveLink
-            name="Polls"
-            path="/polls"
-            setIsMenuOpen={setIsMenuOpen}
-          />
           {!isSignedIn && (
             <>
               <ActiveLink

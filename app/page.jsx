@@ -12,7 +12,7 @@ export default function Home() {
         <Link href="/leagues" className="btn btn-primary">
           Register
         </Link>
-        <Link href="/contact" className="btn">
+        <Link href="/contact" className="btn btn-secondary">
           Contact Us
         </Link>
       </div>

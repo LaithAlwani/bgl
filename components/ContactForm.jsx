@@ -91,7 +91,7 @@ export default function ContactForm() {
         />
         <button
           disabled={loading}
-          className={`btn btn-form ${loading ? "btn-disabled" : ""}`}>
+          className={`btn btn-form btn-primary ${loading ? "btn-disabled" : ""}`}>
           {loading ? <Loader size={24} /> : "Submit"}
         </button>
       </form>

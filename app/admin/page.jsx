@@ -17,7 +17,7 @@ export default function AdminDashboardPage() {
   return (
     <div className="flex-page">
       <h1>Admin Dashboard</h1>
-      <Link href="/admin/create" className="btn">Create</Link>
+      <Link href="/admin/create" className="btn btn-primary">Create</Link>
     </div>
   );
 }

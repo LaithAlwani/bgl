@@ -2,11 +2,11 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { MdOutlineDeleteForever } from "react-icons/md";
 
 export default function CreateLeague() {
   const [title, setTitle] = useState("");
   const [maxNumPlayers, setMaxNumPlayers] = useState(16);
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,9 +34,9 @@ export default function CreateLeague() {
   return (
     <form onSubmit={handleSubmit}>
       <input
-        name="title"
+        name="boardgame"
         type="text"
-        placeholder="Poll Title"
+        placeholder="Boardgames"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
