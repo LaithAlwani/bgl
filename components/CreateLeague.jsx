@@ -21,7 +21,7 @@ export default function CreateLeague() {
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({ boardgame, maxPlayers, startDate, endDate }),
+        body: JSON.stringify({ boardgame, startDate, endDate }),
       });
       if (res.ok) {
         router.push("/leagues");
@@ -47,7 +47,7 @@ export default function CreateLeague() {
           <option value="660f0aae9bae3f27688fab19">Wingspan</option>
         </select>
       </div>
-      <Input name="Max. Players" type="number" value={maxPlayers} method={setMaxPlayers} />
+      {/* <Input name="Max. Players" type="number" value={maxPlayers} method={setMaxPlayers} /> */}
       <Input name="Start Date" type="date" value={startDate} method={setStartDate} />
       <Input name="End Date" type="date" value={endDate} method={setEndDate} />
       <button className="btn btn-primary">Submit</button>

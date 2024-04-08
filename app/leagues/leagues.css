@@ -1,0 +1,29 @@
+.leauge-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 20rem;
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
+
+.leauge-wrapper .league-img {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.leauge-wrapper h3{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.league-img img {
+  object-fit: contain;
+}
+
+.leauge-wrapper .date-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

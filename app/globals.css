@@ -177,10 +177,6 @@ li {
   margin-block-end: 0.5rem;
 }
 
-li:nth-child(odd) {
-  font-weight: bold;
-}
-
 footer {
   width: 100%;
   display: flex;

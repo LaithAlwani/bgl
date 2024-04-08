@@ -18,15 +18,31 @@ const leagueSchema = new Schema(
         },
       },
     ],
+    maxPlayers: {
+      type: Number,
+      default: 16,
+    },
+    startDate: {
+      type: Date,
+      required: true,
+    },
+    endDate: {
+      type: Date,
+      required: true,
+    },
+    fees: {
+      type: Number,
+      default:60
+    },
     sessions: [
       {
         type: Schema.Types.ObjectId,
         red: "Session",
       },
     ],
-    on_going: {
-      type: Boolean,
-      default: true,
+    status: {
+      type: String,
+      default: "has not started",
     },
   },
   { timestamps: true }
