@@ -1,6 +1,6 @@
 .home-page {
   width: 100vw;
-  height: calc(100vh - 65px);
+  height: 100svh;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -11,7 +11,17 @@
 }
 
 .home-page .hero-img {
-  height: 93% !important;
+  height: 93%;
   z-index: -1;
   object-fit: cover;
+}
+
+.white,
+.white::before,
+.white::after {
+  background-color: var(--white) !important;
+}
+
+.transparent {
+  background: transparent;
 }

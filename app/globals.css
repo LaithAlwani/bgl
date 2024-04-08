@@ -59,7 +59,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   padding: 0.5rem;
   display: flex;
   align-items: center;
@@ -163,7 +163,6 @@ nav .avatar {
 
 nav .active {
   background-color: var(--light-blue);
-  color: var(--font-color);
   font-weight: bold;
 }
 
@@ -186,7 +185,7 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-block: 1rem;
+  padding: 1rem 0.5rem;
   border-top: 1px solid;
 }
 

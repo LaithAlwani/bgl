@@ -18,7 +18,7 @@ export default function Home() {
       </div>
 
       <Image
-        src="/images/bg.jpg"
+        src="/images/carcassonne.webp"
         alt="a game of thrones board game"
         fill
         sizes="100vw"

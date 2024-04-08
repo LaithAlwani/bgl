@@ -7,34 +7,41 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isSignedIn, user } = useUser();
-
+  console.log(pathname);
   return (
-    <nav>
+    <nav className={pathname === "/" ? "transparent" : ""}>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
-        <Image src="/logo-min.png" alt="logo" width={120} height={50} />
+        <Image
+          src={pathname === "/" ? "/logo_white.png" : "/logo-min.png"}
+          alt="logo"
+          width={120}
+          height={50}
+        />
       </Link>
       <div
         className={`mobile-nav-btn ${isMenuOpen ? "open" : ""}`}
-        onClick={() => setIsMenuOpen(!isMenuOpen)}
-      >
-        <div className="burger-icon"></div>
+        onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <div className={`burger-icon ${pathname === "/" ? "white" : ""}`}></div>
       </div>
       <div className={`sidebar ${isMenuOpen ? "open" : ""}`}>
         <div className="nav-links">
-          <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} />
+          <ActiveLink name="Home" path="/" setIsMenuOpen={setIsMenuOpen} pathname={pathname} />
           {isSignedIn && (
             <ActiveLink
               name="Dashboard"
               path="/dashboard"
               setIsMenuOpen={setIsMenuOpen}
+              pathname={pathname}
             />
           )}
           <ActiveLink
             name="Leagues"
             path="/leagues"
             setIsMenuOpen={setIsMenuOpen}
+            pathname={pathname}
           />
           {!isSignedIn && (
             <>
@@ -42,11 +49,13 @@ export default function Navbar() {
                 name="Sign In"
                 path="/sign-in"
                 setIsMenuOpen={setIsMenuOpen}
+                pathname={pathname}
               />
               <ActiveLink
                 name="Sign Up"
                 path="/sign-up"
                 setIsMenuOpen={setIsMenuOpen}
+                pathname={pathname}
               />
             </>
           )}
@@ -54,12 +63,14 @@ export default function Navbar() {
             name="About"
             path="/about"
             setIsMenuOpen={setIsMenuOpen}
+            pathname={pathname}
           />
-          <ActiveLink name="F.A.Q." path="/faq" setIsMenuOpen={setIsMenuOpen} />
+          <ActiveLink name="F.A.Q." path="/faq" setIsMenuOpen={setIsMenuOpen} pathname={pathname} />
           <ActiveLink
             name="Contact"
             path="/contact"
             setIsMenuOpen={setIsMenuOpen}
+            pathname={pathname}
           />
 
           {user?.publicMetadata.role === "admin" && (
@@ -67,25 +78,20 @@ export default function Navbar() {
               name="Admin"
               path="/admin"
               setIsMenuOpen={setIsMenuOpen}
+              pathname={pathname}
             />
           )}
           <UserButton afterSignOutUrl="/" />
         </div>
       </div>
-      
     </nav>
   );
 }
 
-const ActiveLink = ({ name, path, setIsMenuOpen }) => {
-  const pathname = usePathname();
+const ActiveLink = ({ name, path, pathname, setIsMenuOpen }) => {
   const active = pathname === path ? "active" : "";
   return (
-    <Link
-      href={path}
-      className={`${active}`}
-      onClick={() => setIsMenuOpen(false)}
-    >
+    <Link href={path} className={`${active}`} onClick={() => setIsMenuOpen(false)}>
       {name}
     </Link>
   );
