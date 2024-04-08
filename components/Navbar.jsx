@@ -10,7 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isSignedIn, user } = useUser();
-  console.log(pathname);
+  
   return (
     <nav className={pathname === "/" ? "transparent" : ""}>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">

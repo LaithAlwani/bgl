@@ -5,10 +5,10 @@ import Boardgame from "@/models/boardgame";
 export const GET = async () => {
   try {
     await connectToDB();
-    const boardgame = await Boardgame.find();
-    return new NextResponse(JSON.stringify(boardgame), { status: 200 });
+    const boardgames = await Boardgame.find();
+    return new NextResponse(JSON.stringify(boardgames), { status: 200 });
   } catch (err) {
-    return new NextResponse("Error in fetching polls " + err, { status: 500 });
+    return new NextResponse("Error in fetching boardgames " + err, { status: 500 });
   }
 };
 
