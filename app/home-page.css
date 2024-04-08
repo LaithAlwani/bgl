@@ -1,4 +1,4 @@
-.home-page{
+.home-page {
   width: 100vw;
   height: calc(100vh - 65px);
   color: white;
@@ -6,11 +6,11 @@
 }
 
 .home-page h1,
-.home-page h2{
+.home-page h2 {
   margin: 0;
 }
 
-.home-page .hero-img{
+.home-page .hero-img {
   height: 93% !important;
   z-index: -1;
   object-fit: cover;
