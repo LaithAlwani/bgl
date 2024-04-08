@@ -2,14 +2,15 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
+import Input from "./Input";
 
 export default function CreateBoardgameForm() {
   const [title, setTitle] = useState("");
   const [image, setImage] = useState("");
   const [thumbnail, setThumbnail] = useState("");
   const [bggLink, setBggLink] = useState("");
-  const [minPlayers, setMinPlayers] = useState();
-  const [maxPlayers, setMaxPlayers] = useState();
+  const [minPlayers, setMinPlayers] = useState(1);
+  const [maxPlayers, setMaxPlayers] = useState(5);
   const [desc, setDesc] = useState("");
   const router = useRouter();
 
@@ -24,7 +25,7 @@ export default function CreateBoardgameForm() {
         body: JSON.stringify({ title, image, thumbnail, bggLink, minPlayers, maxPlayers, desc }),
       });
       if (res.ok) {
-        const data = await res.json()
+        const data = await res.json();
         toast.success(data.message);
         router.push("/admin/create");
       }
@@ -35,48 +36,13 @@ export default function CreateBoardgameForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Boardgame Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Image string"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="Thumbnail string"
-        value={thumbnail}
-        onChange={(e) => setThumbnail(e.target.value)}
-      />
-      <input
-        type="text"
-        placeholder="BGG Link"
-        value={bggLink}
-        onChange={(e) => setBggLink(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Min. Players"
-        value={minPlayers}
-        onChange={(e) => setMinPlayers(e.target.value)}
-      />
-      <input
-        type="number"
-        placeholder="Max. Players"
-        value={maxPlayers}
-        onChange={(e) => setMaxPlayers(e.target.value)}
-      />
-      <textarea
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-        cols="30"
-        rows="10"
-        placeholder="Description"></textarea>
+      <Input name="Boardgame Title" type="text" value={title} method={setTitle} />
+      <Input name="Image" type="text" value={image} method={setImage} />
+      <Input name="Thumbnail" type="text" value={thumbnail} method={setThumbnail} />
+      <Input name="BGG Link" type="text" value={bggLink} method={setBggLink} />
+      <Input name="Max. Players" type="number" value={minPlayers} method={setMinPlayers} />
+      <Input name="Max. Players" type="number" value={maxPlayers} method={setMaxPlayers} />
+      <Input name="Description" type="textarea" value={desc} method={setDesc} />
       <button className="btn btn-primary">Submit</button>
     </form>
   );

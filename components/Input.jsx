@@ -1,7 +1,7 @@
 function Input({ name, type, value, method, error, setError }) {
   const handleChange = (e) => {
     method(e.target.value)
-    setError(false)
+    if(setError) setError(false)
   }
   return (
     <div className="input-wrapper">
