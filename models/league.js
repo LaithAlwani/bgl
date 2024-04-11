@@ -8,9 +8,9 @@ const leagueSchema = new Schema(
     },
     players: [
       {
-        player_id: {
+        playerId: {
           type: Schema.Types.ObjectId,
-          red: "User",
+          ref: "User",
         },
         score: {
           type: Number,

@@ -31,12 +31,6 @@ const userSchema = new Schema(
         ref: "Session",
       },
     ],
-    // leagues: [
-    //   {
-    //     type: Schema.type.ObjectId,
-    //     ref: "League",
-    //   },
-    // ],
   },
   { timestamps: true }
 );

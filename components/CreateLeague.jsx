@@ -1,20 +1,18 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import Input from "./Input";
-import connectToDB from "@/utils/database";
+
 
 export default function CreateLeague() {
   const [boardgame, setBoardgame] = useState("");
-  const [maxPlayers, setMaxPlayers] = useState(16);
   const [startDate, setStartDate] = useState();
   const [endDate, setEndDate] = useState();
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log({ boardgame, maxPlayers, startDate, endDate });
     try {
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/leagues`, {
         method: "POST",
@@ -47,7 +45,6 @@ export default function CreateLeague() {
           <option value="660f0aae9bae3f27688fab19">Wingspan</option>
         </select>
       </div>
-      {/* <Input name="Max. Players" type="number" value={maxPlayers} method={setMaxPlayers} /> */}
       <Input name="Start Date" type="date" value={startDate} method={setStartDate} />
       <Input name="End Date" type="date" value={endDate} method={setEndDate} />
       <button className="btn btn-primary">Submit</button>

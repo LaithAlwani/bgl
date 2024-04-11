@@ -11,6 +11,7 @@ export default authMiddleware({
     "/contact",
     "/faq",
     "/api/webhooks(.*)",
+    "/api/leagues(.*)",
   ],
   // Routes that can always be accessed, and have
   // no authentication information
