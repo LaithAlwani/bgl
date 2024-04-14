@@ -17,9 +17,13 @@ export const GET = async () => {
 export const POST = async (req) => {
   const { boardgame, startDate, endDate } = await req.json();
   const session = await mongoose.startSession();
+  console.log(startDate, endDate)
   try {
     await session.withTransaction(async () => {
-      const league = await League.create({ boardgame, startDate, endDate }, { session });
+      const league = await League.create(
+        [{ boardgame, startDate, endDate }],
+        { session }
+      );
       await Boardgame.findOneAndUpdate(
         { _id: boardgame },
         { $push: { leagues: league } },
@@ -30,5 +34,7 @@ export const POST = async (req) => {
     return NextResponse.json({ message: "League created " }, { status: 201 });
   } catch (err) {
     return new NextResponse("Error in creating boardgame " + err, { status: 500 });
+  } finally {
+    session.endSession();
   }
 };

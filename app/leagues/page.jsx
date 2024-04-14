@@ -47,13 +47,17 @@ export default function LeaguesPage() {
   return (
     <div className="page">
       <h1>Leagues</h1>
+      <h2>Price $60 per league <em>"Early bird pricing"</em></h2>
+      <span>Regular price $80</span>
+      <h3>Early bird price valid till May 15th 2024</h3>
       <ul>
-        {leagues.map(({ _id, boardgame, startDate, endDate, maxPlayers, players }) => (
+        {leagues.map(({ _id, boardgame, startDate, endDate, maxPlayers, players, fees }) => (
           <li key={_id} className="leauge-wrapper">
             <div className="league-img">
               <Image src={boardgame.thumbnail} alt="" fill />
             </div>
             <h3>{boardgame.title}</h3>
+            <p>Price ${fees} <em>Early bird special</em></p>
             <div className="date-register">
               <span>Start: {new Date(startDate).toDateString()}</span>
               <span>End: {new Date(endDate).toDateString()}</span>

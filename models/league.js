@@ -23,11 +23,11 @@ const leagueSchema = new Schema(
       default: 16,
     },
     startDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     endDate: {
-      type: Date,
+      type: String,
       required: true,
     },
     fees: {
