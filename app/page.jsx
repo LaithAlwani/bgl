@@ -16,15 +16,16 @@ export default function Home() {
           Contact Us
         </Link>
       </div>
-
-      <Image
-        src="/images/carcassonne.webp"
-        alt="a game of thrones board game"
-        fill
-        sizes="100vw"
-        priority
-        className="hero-img"
-      />
+      
+        <Image
+          src="/images/carcassonne.webp"
+          alt="a game of thrones board game"
+          fill
+          sizes="100vw"
+          priority
+          className="hero-img"
+        />
+      
 
       {/* game poll */}
       {/* upcomimg leagues  */}
