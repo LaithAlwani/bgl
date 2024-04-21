@@ -8,7 +8,7 @@ export const metadata = {
 
 function SignUpPage() {
   return (
-    <div className="flex-page">
+    <div className="flex-page page">
       <SignUp />
     </div>
   );

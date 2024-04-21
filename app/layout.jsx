@@ -52,7 +52,7 @@ const Footer = () => {
         </a> */}
       </div>
 
-      <span className="copy-right">&copy;2024 Ottawa, ON.</span>
+      <span className="copy-right">&copy;2016 Ottawa, ON.</span>
     </footer>
   );
 };

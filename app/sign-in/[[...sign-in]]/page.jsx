@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function SignInPage() {
   return (
-    <div className="flex-page">
+    <div className="flex-page page">
       <SignIn />
     </div>
   );
