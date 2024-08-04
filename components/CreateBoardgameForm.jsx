@@ -31,7 +31,7 @@ export default function CreateBoardgameForm() {
       if (res.ok) {
         const data = await res.json();
         toast.success(data.message);
-        router.push("/admin/create");
+        router.push("/boardgames");
       }
     } catch (err) {
       console.log(err);
@@ -93,7 +93,7 @@ export default function CreateBoardgameForm() {
       </form>
       {boardgames.length > 0 && boardgames.map(bg => (
         
-        <div>
+        <div key={bg.bggId}>
           <h2>{bg.title}</h2>
           <img src={ bg.thumbnail} alt="" />
         </div>

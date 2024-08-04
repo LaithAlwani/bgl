@@ -18,7 +18,6 @@ export const POST = async (req) => {
     await connectToDB();
     console.log(boardgames)
     for (const bgIdx in boardgames){
-      console.log(boardgames[bgIdx])
       await Boardgame.create(boardgames[bgIdx]);
     }
     return NextResponse.json({ message: `boardgame created` }, { status: 201 });
