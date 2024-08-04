@@ -38,8 +38,8 @@ export default function Navbar() {
             />
           )}
           <ActiveLink
-            name="Leagues"
-            path="/leagues"
+            name="Boardgames"
+            path="/boardgames"
             setIsMenuOpen={setIsMenuOpen}
             pathname={pathname}
           />

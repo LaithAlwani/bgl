@@ -1,4 +1,4 @@
-import { Schema, model, models } from "mongoose";
+import { model, models, Schema } from "mongoose";
 
 const boardgameSchema = new Schema(
   {
@@ -6,27 +6,40 @@ const boardgameSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-      type: String,
-      required: true,
-    },
     thumbnail: {
       type: String,
       required: true,
     },
-    leagues: [
-      {
-        type: Schema.Types.ObjectId,
-        red: "League",
-      },
-    ],
-    image: String,
-    bggLink: String,
-    minPlayers: Number,
-    maxPlayers: Number,
-    stock: Number,
-    price: Number,
-    desc: String,
+    image: {
+      type: String,
+      required: true,
+    },
+    year:String,
+    minPlayers: {
+      type: Number,
+      required: true,
+    },
+    maxPlayers: {
+      type: Number,
+      required: true,
+    },
+    minPlayTime: {
+      type: Number,
+      required: true,
+    },
+    maxPlayTime: {
+      type: Number,
+      required: true,
+    },
+    minAge: {
+      type: String,
+    },
+    description: String,
+    bggId: String,
+    isExpansion: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 );

@@ -13,11 +13,15 @@ export const GET = async () => {
 };
 
 export const POST = async (req) => {
-  const { title, image, thumbnail, bggLink, minPlayers, maxPlayers, desc } = await req.json();
+  const { boardgames } = await req.json();
   try {
     await connectToDB();
-    await Boardgame.create({ title, image, thumbnail, bggLink, minPlayers, maxPlayers, desc });
-    return NextResponse.json({ message: `${title} boardgame created` }, { status: 201 });
+    console.log(boardgames)
+    for (const bgIdx in boardgames){
+      console.log(boardgames[bgIdx])
+      await Boardgame.create(boardgames[bgIdx]);
+    }
+    return NextResponse.json({ message: `boardgame created` }, { status: 201 });
   } catch (err) {
     return new NextResponse("Error in creating boardgame " + err, { status: 500 });
   }
