@@ -19,12 +19,12 @@ export default function BoardgamesPage() {
   }, []);
 
   return (
-    <div>
+    <section className="page">
       {boardgames.map((bg) => (
         <Link href={`/boardgames/${bg._id}`} key={bg._id}>
           <img src={bg.thumbnail}  />
         </Link>
       ))}
-    </div>
+    </section>
   );
 }

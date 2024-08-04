@@ -5,28 +5,21 @@ import toast from "react-hot-toast";
 import Input from "./Input";
 import { XMLParser } from "fast-xml-parser";
 
-
 export default function CreateBoardgameForm() {
-  const [title, setTitle] = useState("");
-  const [image, setImage] = useState("");
-  const [thumbnail, setThumbnail] = useState("");
   const [bggLink, setBggLink] = useState("");
-  const [minPlayers, setMinPlayers] = useState(1);
-  const [maxPlayers, setMaxPlayers] = useState(5);
-  const [desc, setDesc] = useState("");
   const [boardgames, setBoardgames] = useState("");
   const router = useRouter();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(boardgames)
+    console.log(boardgames);
     try {
       const res = await fetch("/api/boardgames", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
         },
-        body: JSON.stringify({boardgames}),
+        body: JSON.stringify({ boardgames }),
       });
       if (res.ok) {
         const data = await res.json();
@@ -45,13 +38,11 @@ export default function CreateBoardgameForm() {
       .then((res) => res.text())
       .then((data) => {
         const parser = new XMLParser({ ignoreAttributes: false });
-
         const {
           items: { item },
         } = parser.parse(data);
         if (item) {
-          console.log(item);
-          // const exp = item.link.filter((link) => link["@_type"] === "boardgameexpansion");
+          // const exps = item.link.filter((link) => link["@_type"] === "boardgameexpansion");
           setBoardgames((prevState) => [
             ...prevState,
             {
@@ -81,25 +72,24 @@ export default function CreateBoardgameForm() {
 
   return (
     <>
-    <form onSubmit={getBggGameInfo}>
-      {/* <Input name="Boardgame Title" type="text" value={title} method={setTitle} />
-      <Input name="Image" type="text" value={image} method={setImage} />
-      <Input name="Thumbnail" type="text" value={thumbnail} method={setThumbnail} /> */}
-      <Input name="BGG Link" type="text" value={bggLink} method={setBggLink} />
-      {/* <Input name="Max. Players" type="number" value={minPlayers} method={setMinPlayers} />
-      <Input name="Max. Players" type="number" value={maxPlayers} method={setMaxPlayers} />
-      <Input name="Description" type="textarea" value={desc} method={setDesc} /> */}
-      <button className="btn btn-primary">Submit</button>
+      <form onSubmit={getBggGameInfo}>
+        <Input name="BGG Link" type="text" value={bggLink} method={setBggLink} />
+        <button className="btn btn-primary">Get Game</button>
       </form>
-      {boardgames.length > 0 && boardgames.map(bg => (
-        
-        <div key={bg.bggId}>
-          <h2>{bg.title}</h2>
-          <img src={ bg.thumbnail} alt="" />
-        </div>
-      )) 
-      }
-      <button onClick={handleSubmit}>Submit</button>
-      </>
+      {boardgames.length > 0 &&
+        boardgames.map((bg) => (
+          <div key={bg.bggId}>
+            <h2>{bg.title}</h2>
+            <img src={bg.thumbnail} alt="" />
+            {bg.isExpansion === true && (
+              <select name="" id="">
+                <option value="">Catan</option>
+              </select>
+            )}
+            <p>{bg.isExpansion.toString()}</p>
+          </div>
+        ))}
+      <button onClick={handleSubmit}>Add Game</button>
+    </>
   );
 }
