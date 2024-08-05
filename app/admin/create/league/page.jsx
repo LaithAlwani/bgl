@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs";
 import CreateLeagueForm from "@/components/CreateLeague";
-import "../../../contact/contact.css";
+import "@/styles/contact.css";
 
 export default function CreateLeague() {
   const { sessionClaims } = auth();
