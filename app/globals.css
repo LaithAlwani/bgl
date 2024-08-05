@@ -190,6 +190,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 0.25rem;
+  min-height: 93vh;
 }
 
 .img-wrapper {
