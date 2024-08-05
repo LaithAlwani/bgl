@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
-import "./leagues.css";
+import "@/styles/leagues.css";
 import { toast } from "react-hot-toast";
 
 // export const metadata = {
@@ -46,8 +46,8 @@ export default function LeaguesPage() {
 
   return (
     <div className="page">
-      <h1>Leagues</h1>
-      <h2>Price $60 per league <em>&quot;Early bird pricing&quot;</em></h2>
+      <h1>Coming Soon</h1>
+      {/* <h2>Price $60 per league <em>&quot;Early bird pricing&quot;</em></h2>
       <span>Regular price $80</span>
       <h3>Early bird price valid till May 15th 2024</h3>
       <ul>
@@ -70,7 +70,7 @@ export default function LeaguesPage() {
             </div>
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 }

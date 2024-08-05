@@ -21,7 +21,7 @@ export default function BoardgamesPage() {
   return (
     <section className="page">
       {boardgames.map((bg) => (
-        <Link href={`/boardgames/${bg._id}`} key={bg._id}>
+        <Link href={`/boardgames/${bg._id}`} key={bg._id} >
           <img src={bg.thumbnail}  />
         </Link>
       ))}

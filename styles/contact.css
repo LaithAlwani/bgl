@@ -18,14 +18,20 @@ form .input-wrapper span {
 }
 
 form .input-error {
-  border: 1px solid red;
+  border: 1px solid var(--red);
 }
 
 form .red {
-  color: red;
+  color: var(--red);
+}
+
+form .btn-form{
+  min-width: 100%;
+  min-height: 50px;
 }
 
 input,
+select,
 textarea {
   width: 100%;
   line-height: 1.2;
@@ -40,4 +46,11 @@ textarea {
 input:focus,
 textarea:focus{
   border: 2px solid;
+}
+
+@media only screen and (min-width:425px) {
+  form .btn-form{
+    min-width: 125px;
+    float: right;
+  }
 }

@@ -52,7 +52,7 @@ export async function POST(req) {
   const { username, email_addresses, first_name, last_name, image_url, profile_image_url } =
     attributes;
   const eventType = evt.type;
-  console.log(image_url, profile_image_url);
+  
   switch (eventType) {
     case "user.created":
       try {

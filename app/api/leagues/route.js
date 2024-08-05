@@ -17,7 +17,6 @@ export const GET = async () => {
 export const POST = async (req) => {
   const { boardgame, startDate, endDate } = await req.json();
   const session = await mongoose.startSession();
-  console.log(startDate, endDate)
   try {
     await session.withTransaction(async () => {
       const league = await League.create(

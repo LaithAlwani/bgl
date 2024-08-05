@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs";
 import CreateBoardgameForm from "@/components/CreateBoardgameForm";
-import "../../../contact/contact.css";
+import "@/styles/contact.css";
 
 export default function CreateBoardgame() {
   const { sessionClaims } = auth();

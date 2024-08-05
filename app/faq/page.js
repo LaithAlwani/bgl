@@ -8,7 +8,8 @@ export default function FAQPage() {
   return (
     <div className="page">
       <h2>F.A.Q&apos;s</h2>
-      <ul>
+      <p>Under Construction</p>
+      {/* <ul>
         <li>Q: Where Will the league games be?</li>
         <li>A: Papa Joe&apos;s, 1896 Prince of Wales Dr, Nepean, ON K2C 3W9.</li>
       </ul>
@@ -49,7 +50,7 @@ export default function FAQPage() {
       <ul>
         <li>Q: How many different games will be choosen?</li>
         <li>A: Up to 10 different games.</li>
-      </ul>
+      </ul> */}
     </div>
   );
 }

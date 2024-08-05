@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 export async function GET(req, context) {
   const { params } = context;
   const id = params.id;
-  console.log(id)
   try {
     await connectToDB();
     const boardgame = await Boardgame.findOne({ _id: id });

@@ -10,8 +10,8 @@ export default function Home() {
         <h2>Boardgame League</h2>
         <em>Elevate your game to the next level</em>
         <div className="button-group">
-          <Link href="/leagues" className="btn btn-primary">
-            Leagues
+          <Link href="/boardgames" className="btn btn-primary">
+            Boardgames
           </Link>
           <a href="#learn-more" className="btn btn-secondary">
             Learn More

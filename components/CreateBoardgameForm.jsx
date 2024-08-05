@@ -12,7 +12,6 @@ export default function CreateBoardgameForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(boardgames);
     try {
       const res = await fetch("/api/boardgames", {
         method: "POST",
@@ -27,7 +26,7 @@ export default function CreateBoardgameForm() {
         router.push("/boardgames");
       }
     } catch (err) {
-      console.log(err);
+      toast.error(err.message)
     }
   };
 
@@ -64,10 +63,10 @@ export default function CreateBoardgameForm() {
           ]);
           setBggLink("");
         } else {
-          console.log("please try again");
+          toast.error("please try again");
         }
       })
-      .catch((err) => console.log(err.message));
+      .catch((err) => toast.error(err.message));
   };
 
   return (
@@ -89,7 +88,7 @@ export default function CreateBoardgameForm() {
             <p>{bg.isExpansion.toString()}</p>
           </div>
         ))}
-      <button onClick={handleSubmit}>Add Game</button>
+      {boardgames.length > 0 && <button onClick={handleSubmit} className="btn btn-primary">Add Game</button>}
     </>
   );
 }
