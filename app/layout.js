@@ -32,8 +32,6 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <head>
           <link rel="icon" href="/favicon.ico" />
-          <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
-          <link rel="andriod-touch-icon" href="/images/andriod-192x192.png" />
         </head>
         <body className={inter.className}>
           <Navbar />
