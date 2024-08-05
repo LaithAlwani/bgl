@@ -19,22 +19,27 @@ const userSchema = new Schema(
     image: String,
     avatar: String,
 
-    leagues: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "League",
-      },
-    ],
-    sessions: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: "Session",
-      },
-    ],
+    plays: [{
+      type: Schema.Types.ObjectId,
+      ref:"Session"
+    }]
+
+    // leagues: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "League",
+    //   },
+    // ],
+    // sessions: [
+    //   {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Session",
+    //   },
+    // ],
   },
   { timestamps: true }
 );
 
-const User = models.User || model("User", userSchema);
+const user = models.User || model("User", userSchema);
 
-export default User;
+export default user;
