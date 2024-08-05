@@ -2,7 +2,7 @@ import { GiMeeple } from "react-icons/gi";
 
 export default function Loader({size}) {
   return (
-    <div className="">
+    <div className="loader">
       <GiMeeple size={size} color="#7bc242"/>
       <GiMeeple size={size} color="#b8373c"/>
       <GiMeeple size={size} color="#feca28"/>

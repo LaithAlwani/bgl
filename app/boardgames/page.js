@@ -23,7 +23,7 @@ export default function BoardgamesPage() {
   }, []);
 
   return (
-    <section className="flex-page page">
+    <section className="flex-page">
       <div className="boardgame-container">
         {!loading ? (
           boardgames.map((bg) => (

@@ -256,6 +256,25 @@ footer {
   background-color: transparent;
   color: var(--muted);
 }
+.loading-screen{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  z-index: 100;
+}
+
+.loader{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
 
 footer .copy-right {
   font-size: 0.8rem;
