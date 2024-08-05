@@ -11,6 +11,19 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Game Districts | Home",
   description: "Take your bord game to the next level!",
+  generator: "Next.js",
+  manifest: "/manifest.json",
+  keywords: ["nextjs", "next14", "pwa", "next-pwa"],
+  authors: [
+    {
+      name: "Laith Alwani",
+      url: "https://www.laithalwani.ca",
+    },
+  ],
+  icons: [
+    { rel: "apple-touch-icon", url: "icons/icon-128x128.png" },
+    { rel: "icon", url: "icons/icon-128x128.png" },
+  ],
 };
 
 export default function RootLayout({ children }) {
