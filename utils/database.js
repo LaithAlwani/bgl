@@ -13,8 +13,6 @@ const connectToDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI, {
       dbName: "meeple_nation",
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     })
 
     isConnected = true;
