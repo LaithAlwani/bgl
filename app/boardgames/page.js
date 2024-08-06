@@ -2,6 +2,7 @@
 import Loader from "@/components/Loader";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import "@/styles/boardgames.css"
 
 export default function BoardgamesPage() {
   const [boardgames, setBoardgames] = useState([]);
@@ -27,8 +28,8 @@ export default function BoardgamesPage() {
       <div className="boardgame-container">
         {!loading ? (
           boardgames.map((bg) => (
-            <Link href={`/boardgames/${bg._id}`} key={bg._id}>
-              <img src={bg.thumbnail} />
+            <Link href={`/boardgames/${bg._id}`} key={bg._id} style={{minHeight:"9rem"}}>
+              <img src={bg.thumbnail} style={{minHeight:"9rem"}}/>
             </Link>
           ))
         ) : (
