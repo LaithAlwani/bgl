@@ -3,7 +3,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Meeple Nation | Admin",
+  title: "Game Districts | Admin",
   description: "For Admins only",
 };
 

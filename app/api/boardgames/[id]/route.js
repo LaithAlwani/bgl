@@ -1,4 +1,5 @@
 import Boardgame from "@/models/boardgame";
+import Session from "@/models/session"; //needed for populating, otherwise an error will happen
 import connectToDB from "@/utils/database";
 import { NextResponse } from "next/server";
 
@@ -10,9 +11,7 @@ export async function GET(req, context) {
     const boardgame = await Boardgame.findOne({ _id: id }).populate("sessions").exec();
     return NextResponse.json(boardgame, { status: 200 });
   } catch (err) {
-    return NextResponse.json(
-      { message: "Error in creating boardgame" + err },
-      { status: 500 }
-    );
+    console.log(err);
+    return NextResponse.json({ message: "Error in fetching boardgame" + err }, { status: 500 });
   }
 }
