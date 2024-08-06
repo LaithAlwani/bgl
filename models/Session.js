@@ -4,10 +4,13 @@ const sessionSchema = new Schema(
   {
     players: [
       {
-        players: {
-          type: Schema.Types.ObjectId,
-          ref: "User",
+        player: {
+          type: String,
         },
+        // players: {
+        //   type: Schema.Types.ObjectId,
+        //   ref: "User",
+        // },
         points: {
           type: Number,
           default:0

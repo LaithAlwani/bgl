@@ -7,7 +7,7 @@ export async function GET(req, context) {
   const id = params.id;
   try {
     await connectToDB();
-    const boardgame = await Boardgame.findOne({ _id: id });
+    const boardgame = await Boardgame.findOne({ _id: id }).populate("sessions").exec();
     return NextResponse.json(boardgame, { status: 200 });
   } catch (err) {
     return NextResponse.json(

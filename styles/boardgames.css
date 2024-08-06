@@ -5,3 +5,24 @@
   justify-content: flex-start;
   gap: 0 0.5rem;
 }
+
+.modle{
+  width: 0;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-block-start: 5rem;
+  background-color: var(--blue);
+  top: 0;
+  right: 0;
+  transition: all 0.5s ease-in-out;
+  white-space: nowrap;
+}
+
+.modle.open{
+  width: 100vw;
+  
+}

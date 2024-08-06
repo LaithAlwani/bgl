@@ -14,7 +14,7 @@ const boardgameSchema = new Schema(
       type: String,
       required: true,
     },
-    year:String,
+    year: String,
     minPlayers: {
       type: Number,
       required: true,
@@ -40,6 +40,12 @@ const boardgameSchema = new Schema(
       type: Boolean,
       default: false,
     },
+    sessions: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Session"
+      }
+    ],
   },
   { timestamps: true }
 );
