@@ -1,5 +1,5 @@
 import Boardgame from "@/models/boardgame";
-import Session from "@/models/Session";
+import Session from "@/models/session";
 import connectToDB from "@/utils/database";
 import { NextResponse } from "next/server";
 
