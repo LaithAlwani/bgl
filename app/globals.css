@@ -60,7 +60,7 @@ nav {
 }
 
 nav .logo {
-  z-index: 99;
+  z-index: 1;
 }
 
 nav .nav-links {
@@ -134,7 +134,7 @@ nav .sidebar {
 }
 
 nav .sidebar.open {
-  width: 14rem;
+  width: 100%;
 }
 nav .sidebar .nav-links > * {
   display: block;
@@ -142,7 +142,7 @@ nav .sidebar .nav-links > * {
   padding: 1rem;
   border: none;
   text-align: left;
-  font-size: 14px;
+  font-size: 18px;
   border-radius: 0;
   white-space: nowrap;
 }
@@ -278,4 +278,11 @@ footer {
 
 footer .copy-right {
   font-size: 0.8rem;
+}
+
+@media only screen and (min-width:601px) {
+  nav .sidebar.open {
+    width: 14rem;
+  }
+
 }

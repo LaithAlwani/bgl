@@ -1,12 +1,19 @@
-.boardgame-container{
+.boardgame-container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 0 0.5rem;
 }
+.boardgame{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
 
-.modle{
+}
+
+.modle {
   width: 0;
   height: 100vh;
   position: fixed;
@@ -19,10 +26,8 @@
   top: 0;
   right: 0;
   transition: all 0.5s ease-in-out;
-  white-space: nowrap;
 }
 
-.modle.open{
+.modle.open {
   width: 100vw;
-  
 }
