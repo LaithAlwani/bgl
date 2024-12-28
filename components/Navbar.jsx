@@ -10,7 +10,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isSignedIn, user } = useUser();
-  
+
   return (
     <nav className={pathname === "/" ? "transparent" : ""}>
       <Link href="/" onClick={() => setIsMenuOpen(false)} className="logo">
@@ -37,6 +37,12 @@ export default function Navbar() {
               pathname={pathname}
             />
           )}
+          <ActiveLink
+            name="AI Chat"
+            path="/chat"
+            setIsMenuOpen={setIsMenuOpen}
+            pathname={pathname}
+          />
           <ActiveLink
             name="Boardgames"
             path="/boardgames"

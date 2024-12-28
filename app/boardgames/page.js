@@ -33,7 +33,7 @@ export default function BoardgamesPage() {
             </Link>
           ))
         ) : (
-          <Loader size={128} />
+          <Loader size={96} />
         )}
       </div>
     </section>

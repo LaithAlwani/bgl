@@ -4,6 +4,7 @@ export default authMiddleware({
   // Routes that can be accessed while signed out
   publicRoutes: [
     "/",
+    "/chat",
     "/boardgames(.*)",
     "/sign-up",
     "/sign-in",
@@ -13,6 +14,7 @@ export default authMiddleware({
     "/api/webhooks(.*)",
     "/api/boardgames(.*)",
     "/api/sessions(.*)",
+    "/api/chat(.*)",
   ],
   // Routes that can always be accessed, and have
   // no authentication information

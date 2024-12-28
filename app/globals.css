@@ -216,11 +216,12 @@ footer {
 }
 
 .btn {
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   border: 1px solid;
   border-radius: 0.25rem;
-  min-width: 8rem;
+  margin-inline-end: 0.5rem;
+  margin-block: 0.25rem;
   text-align: center;
   background-color: transparent;
   font-weight: bold;
@@ -256,7 +257,7 @@ footer {
   background-color: transparent;
   color: var(--muted);
 }
-.loading-screen{
+.loading-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -269,20 +270,38 @@ footer {
   z-index: 100;
 }
 
-.loader{
+.loader {
   width: 100%;
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
 }
 
+input,
+select,
+textarea {
+  width: 100%;
+  line-height: 1.2;
+  padding: 1rem 0.5rem;
+  margin-block: 0.5rem;
+  border: 1px solid;
+  border-radius: 0.25rem;
+  resize: none;
+  outline: none;
+}
+
+input:focus,
+textarea:focus{
+  border: 2px solid;
+}
+
+
 footer .copy-right {
   font-size: 0.8rem;
 }
 
-@media only screen and (min-width:601px) {
+@media only screen and (min-width: 601px) {
   nav .sidebar.open {
     width: 14rem;
   }
-
 }

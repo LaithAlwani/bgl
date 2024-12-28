@@ -9,7 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^1.0.11",
     "@clerk/nextjs": "^4.29.8",
+    "@langchain/openai": "^0.3.16",
+    "@pinecone-database/pinecone": "^4.0.0",
+    "ai": "^4.0.22",
     "fast-xml-parser": "^4.4.1",
     "mongodb": "^6.4.0",
     "mongoose": "^8.2.0",

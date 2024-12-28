@@ -5,7 +5,8 @@ import { useEffect, useState } from "react";
 import "@/styles/boardgames.css";
 import "@/styles/contact.css";
 import toast from "react-hot-toast";
-import { MdOutlineDeleteOutline } from "react-icons/md";
+import { MdOutlineDeleteOutline, MdOutlineClose } from "react-icons/md";
+import { useUser } from "@clerk/nextjs";
 
 export default function BoardgamePage() {
   const params = useParams();
@@ -30,7 +31,7 @@ export default function BoardgamePage() {
   return (
     <div className="page flex-page">
       {loading ? (
-        <Loader size={128} />
+        <Loader size={96} />
       ) : (
         <>
           <BoardGame
@@ -65,7 +66,9 @@ const BoardGame = ({ boardgame, modleToggle, setModleToggle }) => {
           <p>
             Time: {boardgame.minPlayTime} - {boardgame.maxPlayTime}
           </p>
-          <button className="btn btn-green" onClick={(e) => setModleToggle(!modleToggle)}>Log Play</button>
+          <button className="btn btn-green" onClick={(e) => setModleToggle(!modleToggle)}>
+            Log Play
+          </button>
         </div>
       </div>
     )
@@ -73,12 +76,14 @@ const BoardGame = ({ boardgame, modleToggle, setModleToggle }) => {
 };
 
 const GamePlays = ({ sessions }) => {
+  const { user } = useUser();
   return (
     sessions?.length > 0 &&
     sessions.map((session) =>
-      session.players.map((player, i) => (
-        <p key={i}>
-          {player.player} points:{player.points}
+      session.players.map((player) => (
+        <p key={player._id}>
+          {console.log(player._id)}
+          {player.player} points:{player.points} {<span>X</span>}
         </p>
       ))
     )
@@ -151,7 +156,9 @@ const LogPlay = ({ boardgame, setBoardgame, setModleToggle }) => {
             autoComplete="false"
             style={{ flexBasis: "content" }}
           />
-          <MdOutlineDeleteOutline onClick={() => removePlayer(idx)} color="#b8373c" size={64} />
+          {inputFields.length > 1 && (
+            <MdOutlineDeleteOutline onClick={() => removePlayer(idx)} color="white" size={32} />
+          )}
         </div>
       ))}
       <button type="button" onClick={addPlayer} className="btn">
@@ -166,7 +173,9 @@ const LogPlay = ({ boardgame, setBoardgame, setModleToggle }) => {
 const Modle = ({ children, modleToggle, setModleToggle }) => {
   return (
     <div className={`modle ${modleToggle ? "open" : ""}`}>
-      <span onClick={() => setModleToggle(false)}>X</span>
+      <span onClick={() => setModleToggle(false)} className="close">
+        <MdOutlineClose size={32} />
+      </span>
       {children}
     </div>
   );
